@@ -1,0 +1,66 @@
+ Below programs in arrow functions:
+                              1.Print odd numbers in an array
+
+
+const printOddNumbers = (array) => {
+  const oddNumbers = array.filter((number) => number % 2 !== 0);
+  console.log(oddNumbers);
+};
+
+printOddNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]); // Output: [1, 3, 5, 7, 9]
+
+ 
+                             2.Convert all the strings to title caps in a string array
+
+const convertToTitleCase = (array) => {
+  const titleCaseStrings = array.map((string) =>
+    string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
+  );
+  console.log(titleCaseStrings);
+};
+
+convertToTitleCase(["the quick brown fox", "jumps over", "the lazy dog"]); // Output: ["The quick brown fox", "Jumps over", "The lazy dog"]
+
+
+                            3.Sum of all numbers in an array
+
+
+const sumOfNumbers = (array) => {
+  const sum = array.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  console.log(sum);
+};
+
+sumOfNumbers([1, 2, 3, 4, 5]); // Output: 15
+
+
+                           4.Return all the prime numbers in an array
+
+
+const getPrimeNumbers = (numbers) => {
+  const primes = numbers.filter((number) => {
+    if (number <= 1) {
+      return false;
+    }
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+      if (number % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  });
+  console.log(primes);
+};
+
+getPrimeNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9]); // Output: [2, 3, 5, 7]
+
+
+                         5.Return all the palindromes in an array
+
+const getPalindromes = (strings) => {
+  const palindromes = strings.filter(
+    (string) => string === string.split("").reverse().join("")
+  );
+  console.log(palindromes);
+};
+
+getPalindromes(["racecar", "level", "hello", "mom"]); // Output: ["racecar", "level", "mom"]
